@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Compromised Account Reset</title>
+    <link rel="stylesheet", href="styles/reset.css" />
+  </head>
+  <body>
+    <section class="result">
+      <% if @bad_user %>
+         <p>Not Found</p>
+      <% else %>
+        <% if @ldap.get_operation_result.message == "Success" %>
+          <p>Luminis Password Scrambled</p>
+        <% else %>
+          <%= @ldap.get_operation_result.message %>
+        <% end %>
+      <% end %>
+    </section>
+  </body>
+</html>

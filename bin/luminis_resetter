@@ -1,0 +1,32 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
+require 'resetter'
+
+class Setup
+  def query_string(comp)
+    case comp
+      when :server
+        "Please identify the Luminis Server (IP): "
+      when :user
+        "Please enter the admin username: "
+      when :pass
+        "Please enter the admin password: "
+    end
+  end
+end # Setup class
+
+module Resetter; end
+
+conf = Setup.new
+
+print conf.query_string(:server)
+Resetter::LUMINIS = STDIN.gets.chop
+
+print conf.query_string(:user)
+Resetter::ADMIN = STDIN.gets.chop
+
+print conf.query_string(:pass)
+Resetter::PASSWORD = STDIN.gets.chop
+
+PasswordResetter.run!

@@ -1,0 +1,26 @@
+body {
+    font-size: 16px;
+}
+
+header {
+    text-align: center;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    color: red;
+}
+
+.form {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+.fields {
+    padding-top: 4%;
+    padding-bottom: 2%;
+}
+
+.buttons {
+    padding-top: 2%;
+    padding-bottom: 4%;
+}
